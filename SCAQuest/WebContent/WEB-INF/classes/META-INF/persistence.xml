@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<!--  persistence-unit name="SCAPU"
+		transaction-type="RESOURCE_LOCAL"> -->
+	<persistence-unit name="SCAPU" transaction-type="RESOURCE_LOCAL">  
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>       		
+		<!-- jta-data-source>java:comp/env/jdbc/SCADB</jta-data-source>
+		-->
+
+		<class>br.cefet.sca.model.Alternativa</class>
+		<class>br.cefet.sca.model.Aluno</class>
+		<class>br.cefet.sca.model.Disciplina</class>
+		<class>br.cefet.sca.model.Professor</class>
+		<class>br.cefet.sca.model.Questao</class>		
+		<class>br.cefet.sca.model.Resposta</class>
+		<class>br.cefet.sca.model.SemestreLetivo</class>
+		<class>br.cefet.sca.model.Turma</class>
+		<class>br.cefet.sca.model.Usuario</class>
+		<class>br.cefet.sca.model.Questionario</class>
+
+		
+		
+        <!-- 
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+
+			<property name="hibernate.connection.url" value="jdbc:postgresql://pgsql.teammobile.kinghost.net/teammobile" />  
+         	<property name="hibernate.connection.username" value="teammobile" />
+			<property name="hibernate.connection.password" value="postgres" />
+			  
+			<property name="hibernate.transaction.factory_class" value="org.hibernate.transaction.JDBCTransactionFactory" /> 
+			
+			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider" />
+		</properties>
+		-->
+		
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+				
+			<property name="hibernate.transaction.factory_class" value="org.hibernate.transaction.JDBCTransactionFactory" />
+			<property name="hibernate.connection.url" value="jdbc:hsqldb:mem:scadb2" />  
+         	<property name="hibernate.connection.username" value="sa" />
+			<property name="hibernate.connection.password" value="sa" /> 
+			
+			<property name="hibernate.connection.driver_class" value="org.hsqldb.jdbc.JDBCDriver" />
+			
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider" />
+		</properties>
+		 
+		
+		<!-- 
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+
+			<property name="hibernate.transaction.factory_class" value="org.hibernate.transaction.JDBCTransactionFactory" /> 
+			<property name="compatible"  value="true" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider" />
+		</properties>
+		
+		 -->
+	</persistence-unit>
+</persistence>

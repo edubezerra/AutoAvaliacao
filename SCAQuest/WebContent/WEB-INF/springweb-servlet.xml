@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- ativa o uso de anotações -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+	
+	<!-- controladores -->
+	<!-- login -->
+	<bean class="br.cefet.sca.controller.LoginController">	
+	     <property name="autenticadorUsuario" ref="autenticador" />	
+	</bean>
+	
+	<!-- aluno -->  
+	<bean class="br.cefet.sca.controller.AlunoController">		
+	</bean>
+	
+	<!-- questionario -->  
+	<bean class="br.cefet.sca.controller.QuestionarioController">		
+	</bean>
+	
+	<!-- graficos -->  
+	<bean class="br.cefet.sca.controller.ChartController">		
+	</bean>
+	
+	
+    <!-- autenticadores -->  
+    <bean name="autenticador" class="br.cefet.sca.autenticacao.AutenticadorUsuarioWebService" />	
+	
+	
+	
+	<!-- daos -->
+	<!-- bean name="alunoDaoStub" class="dao.AlunoDaoStub" / -->	
+	
+	 
+</beans>
